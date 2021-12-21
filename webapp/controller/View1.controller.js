@@ -72,11 +72,6 @@ sap.ui.define([
 
 		},
 		onListTrPressed: function (oEvent) {
-		// 	var selectedItem = oEvent.getParameter("listItem").getProperty('title');
-		// 	this.getView().byId("transportId").setValue(selectedItem);
-		// 	this.oDialog.close();
-			// var selectedItem = oEvent.getParameter("selectedItem").getProperty("title");
-			// this.getView().byId("transportId").setValue(selectedItem);
 		oEvent.getParameter("selectedContexts")[0].getObject();
 		 },
 		onListOwnerPressed: function (oEvent) {
