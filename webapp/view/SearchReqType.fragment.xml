@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Transport Requests" contentWidth="30%" contentHeight="60%">
+		<List headerText="Request Type"  items="{ path: 'localModel4>/' }" mode="SingleSelectMaster" selectionChange="onListTypePressed">
+			<StandardListItem title="{localModel4>Type}" description="{localModel4>Description}"/>
+		</List>
+		<endButton>
+			<Button text="Close" press="pressOnCloseDialog2"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

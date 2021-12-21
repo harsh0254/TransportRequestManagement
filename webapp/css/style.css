@@ -1,0 +1,9 @@
+/* Enter your custom styles here */
+
+html.sap-desktop .sapMIBar.sapMFooter-CTX 
+{
+	background-color:#39393B;
+},
+alignLeft{
+	margin-left:300px;
+}

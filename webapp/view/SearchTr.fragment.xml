@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog multiSelect="true" title="Transport Requests" contentWidth="30%" contentHeight="60%" noDataText="No Products Found" 
+		search=".onSearch" confirm="onListTrPressed" cancel="pressOnCloseDialog" items="{ path: 'localModel2>/' }">
+		<!--<List headerText="TR Numbers" items="{ path: 'localModel2>/' }" mode="SingleSelectMaster" selectionChange="onListTrPressed">-->
+			<StandardListItem title="{localModel2>Number}" description="{localModel2>Description}"/>
+		<!--</List>-->
+	</SelectDialog>
+</core:FragmentDefinition>

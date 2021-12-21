@@ -1,0 +1,44 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap"
+	xmlns:l="sap.ui.layout" controllerName="com.airdit.TransportRequestManagement.controller.Reviews" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Request Management" showNavButton="true" navButtonPress="onBack" titleAlignment="Center">
+		<content>
+			<ObjectHeader title="{localModel>/RequestNumber}" number="{localModel>/Owner}" backgroundDesign="Solid">
+				<attributes>
+					<ObjectAttribute text="{localModel>/Description}"></ObjectAttribute>
+				</attributes>
+				<statuses>
+					<ObjectStatus text="TR Position : {=${localModel>/Position}}"></ObjectStatus>
+				</statuses>
+			</ObjectHeader>
+			<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+		adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+		singleContainerFullSize="false">
+		<f:content >
+	
+			<core:Title text="Release Details"></core:Title>
+			<Label labelFor="SB1" class="sapUiTinyMarginTop" required="true" text="Reference Type"/>
+			<SegmentedButton id="SB1" class="sapUiSmallMarginBegin">
+				<items>
+					<SegmentedButtonItem text="CR" width="75px"/>
+					<SegmentedButtonItem text="Incident" width="75px"/>
+					<SegmentedButtonItem text="Project" width="75px"/>
+					<SegmentedButtonItem text="Defect" width="75px"/>
+					<SegmentedButtonItem text="Others" width="75px"/>
+				</items>
+			</SegmentedButton>
+			</f:content>
+			</f:SimpleForm>
+			<VBox id="idFragment"></VBox>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button id="editId" type="Emphasized" text="Edit" icon="sap-icon://edit" press="onClickLoadEditFragment"></Button>
+				<Button id="approvalId" type="Success" text="Send For Approval"></Button>
+				<Button id="saveId" type="Success" text="Save" visible="false" press="onSave"></Button>
+				<Button id="cancelId" text="Cancel" type="Reject" visible="false" press="onCancel"></Button>
+				<Button text="Change Reviewer" id="changeReviewerId" icon="sap-icon://journey-change" visible="false"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

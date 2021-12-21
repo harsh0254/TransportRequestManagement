@@ -1,0 +1,83 @@
+<mvc:View controllerName="com.airdit.TransportRequestManagement.controller.View1" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" displayBlock="true">
+	<f:DynamicPage id="dynamicPageId">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Transport Request Report"/>
+				</f:heading>
+				<f:actions>
+					<Button icon="sap-icon://reset" press="onRefresh" type="Emphasized"/>
+				</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader>
+				<f:content>
+					<fb:FilterBar id="filterBar" reset="onReset" search="onClickGo" clear="onClear" cancel="onCancel"
+						filtersDialogClosed="onFiltersDialogClosed" showRestoreButton="true" showClearButton="true">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="TR Number" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input id="transportId" type="Text" showValueHelp="true" valueHelpRequest="onSearchTR"></Input>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="Owner" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input type="Text" id="idCreatedBy" showValueHelp="true" valueHelpRequest="onSearchOwner"></Input>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" visibleInFilterBar="true" name="A1" label="Created On">
+								<fb:control>
+									<DatePicker id="createdOn"></DatePicker>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="B1" label="RequestType" visibleInFilterBar="true">
+								<fb:control>
+									<Input showValueHelp="true" id="idRequestType" valueHelpRequest="onRequestType"/>
+								</fb:control>
+							</fb:FilterGroupItem>
+						</fb:filterGroupItems>
+					</fb:FilterBar>
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<Table id="idProductsTable" inset="false" items="{localModel>/}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<Label text="MY TRANSPORT REQUESTS" design="Bold"></Label>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Transport Request"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Owner"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Created On"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Request Type"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label design="Bold" text="Description"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle" type="Navigation" press="onNavigate">
+						<cells>
+							<Text text="{localModel>Number}"/>
+							<Text text="{localModel>Owner}"/>
+							<Text text="{path:'localModel>Erdat', type:'sap.ui.model.type.Date',formatOptions: { style: 'medium' }}"></Text>
+							<Text text="{localModel>Type}"></Text>
+							<Text text="{localModel>Description}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

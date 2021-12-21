@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout">
+	<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12"
+		adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+		singleContainerFullSize="false">
+		<f:content >
+			<core:Title text="Reviewer Details"></core:Title>
+			
+				
+					<Label class="sapUiTinyMarginTop" text="Peer Reviewer" required="true"></Label>
+					<Input showValueHelp="true" valueHelpRequest="onPeerRequest" value="{PrReviewer}" placeholder="Peer Reviewer" width="200px"></Input>
+				
+				
+					<Label class="sapUiTinyMarginTop" text="Peer Reviewer Id"></Label>
+					<Text text="{PrReviewerId}"></Text>
+				
+				
+					<Label class="sapUiTinyMarginTop" text="Governance Reviewer" required="true"></Label>
+					<Input showValueHelp="true" value="{GrReviewer}" valueHelpRequest="onGovernanceRequest" width="200px" placeholder="Governance Reviewer"></Input>
+					<Label class="sapUiTinyMarginTop" text="Governance Reviewer Id"></Label>
+					<Text text="{GrReviewerId}"></Text>
+			
+			
+			<core:Title text="Reviewer Status"></core:Title>
+			<Label text="Peer Reviewer Status"></Label>
+			<Text text="{PrStatus}"></Text>
+			<Label text="Governance Reviewer Status"></Label>
+			<Text text="{GrStatus}"></Text>
+			<core:Title text="Other Details"></core:Title>
+			
+				<Label class="sapUiTinyMarginTop" text="Dependent TR"></Label>
+				<Input class="sapUiTinyMarginBegin" width="150px"></Input>
+				<Button class="sapUiSmallMarginBegin" icon="sap-icon://reset" width="10px"></Button>
+			
+			<core:Title ></core:Title>
+			<core:Title text="Comments"></core:Title>
+			<Label text="Comment"></Label>
+			
+			<TextArea value="{Comment}"></TextArea>
+			<core:Title></core:Title>
+			<Label text="Issue and Solution"></Label>
+			
+			<TextArea value="{Solution}"></TextArea>
+		</f:content>
+	</f:SimpleForm>
+</core:FragmentDefinition>
